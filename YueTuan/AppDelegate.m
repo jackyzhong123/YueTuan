@@ -17,6 +17,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    if(NO)
+    {
+       // self.window.rootViewController = [[LoginViewController alloc] init];
+        
+        
+        UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"Login" bundle:nil];
+        UIViewController *xgc=[mainStoryboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+    //    [self.viewController  presentViewController:xgc animated:YES completion:nil];
+
+        self.window.rootViewController=xgc;
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+
+    [defaults setInteger:1 forKey:@"FavoriteSex"];
+    [defaults synchronize];
+    
     return YES;
 }
 
